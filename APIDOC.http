@@ -1,0 +1,59 @@
+#ACCOUNTS ENDPOINTS
+
+#API call for creating a user
+###
+POST http://127.0.0.1:8000/accounts/user/signup/
+Content-Type: application/json
+
+{
+    "username":"safa",
+    "password":"safa123",
+    "email":"safa@gmail.com",
+    "phone":"603587654"
+
+}
+
+#API call for creating an admin  user
+###
+POST http://127.0.0.1:8000/accounts/admin/signup/
+Content-Type: application/json
+
+{
+    "username":"rohan",
+    "password":"rohan123",
+    "email":"rohan@gmail.com",
+    "phone":"953587655",
+    "role":"trainer"
+
+}
+
+#API call for creating a token
+###
+POST http://127.0.0.1:8000/accounts/token/
+Content-Type: application/json
+
+{
+    "username":"rohan",
+    "password":"rohan123"
+}
+
+#API call for updating trainer profile
+###
+PUT http://127.0.0.1:8000/accounts/trainerprofile/update/
+Content-Type: application/json
+Authorization: Token ac9e2debb69f5962dd60104e8b00808cde6564f7
+
+{
+    "expertise_areas": "Web development, REST APIs, database design",
+    "qualification": "B.Tech in Computer Science",
+    "languages": "Python, JavaScript, SQL",
+    "experience_years": "3",
+    "githuburl": "https://github.com/example-user",
+    "linkedurl": "https://www.linkedin.com/in/example-user"
+  }
+
+#API call for getting the profile of trainer
+###
+GET http://127.0.0.1:8000/accounts/trainerprofile/detail/
+Accept: application/json
+Authorization: Token ac9e2debb69f5962dd60104e8b00808cde6564f7
