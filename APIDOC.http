@@ -33,8 +33,8 @@ POST http://127.0.0.1:8000/accounts/token/
 Content-Type: application/json
 
 {
-    "username":"rohan",
-    "password":"rohan123"
+    "username":"admin",
+    "password":"admin123"
 }
 
 #API call for updating trainer profile
@@ -55,5 +55,52 @@ Authorization: Token ac9e2debb69f5962dd60104e8b00808cde6564f7
 #API call for getting the profile of trainer
 ###
 GET http://127.0.0.1:8000/accounts/trainerprofile/detail/
+Accept: application/json
+Authorization: Token ac9e2debb69f5962dd60104e8b00808cde6564f7
+
+#====================COURSE ENDPOINTS===================
+#API call for listing all courses of the logged in trainer
+###
+GET http://127.0.0.1:8000/programs/courses/
+Accept: application/json
+Authorization: Token ac9e2debb69f5962dd60104e8b00808cde6564f7
+
+#API call for creating a course
+###
+POST http://127.0.0.1:8000/programs/courses/
+Content-Type: application/json
+Authorization: Token 4332b90a527337218bcaeff7ca162ebed4a8ad79
+
+  {
+    "title": "Java Application Development",
+    "description": "Build Java applications using object-oriented principles, collections, and file handling.",
+    "fee": 8000,
+    "duration": "10 weeks",
+    "language": "java"
+  }
+
+#API call for retrieving a course
+###
+GET http://127.0.0.1:8000/programs/courses/1/
+Accept: application/json
+Authorization: Token ac9e2debb69f5962dd60104e8b00808cde6564f7
+
+#API call for updating a course
+###
+PUT http://127.0.0.1:8000/programs/courses/1/
+Content-Type: application/json
+Authorization: Token ac9e2debb69f5962dd60104e8b00808cde6564f7
+
+{
+    "title": "Python Fundamentals",
+    "description": "Learn Python syntax, variables, control flow, functions, and basic data structures.",
+    "fee": 5000,
+    "duration": "7 weeks",
+    "language": "python"
+  }
+
+#API call for deleting a course
+###
+DELETE http://127.0.0.1:8000/programs/courses/3/
 Accept: application/json
 Authorization: Token ac9e2debb69f5962dd60104e8b00808cde6564f7
