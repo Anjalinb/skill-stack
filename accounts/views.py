@@ -6,7 +6,7 @@ from rest_framework import authentication,permissions
 
 from accounts.models import User,TrainerProfile
 from accounts.serializers import UserSerializer,TrainerProfileSerializer
-from accounts.permissions import IsTrainer
+
 
 class UserSignUpView(APIView):
 
@@ -39,7 +39,7 @@ class AdminSignUpView(APIView):
 
 class TrainerProfileUpdateView(APIView):
     authentication_classes=[authentication.TokenAuthentication]
-    permission_classes=[permissions.IsAuthenticated,IsTrainer]
+    permission_classes=[permissions.IsAdminUser]
 
     def put(self,request):
 
@@ -62,7 +62,7 @@ class TrainerProfileUpdateView(APIView):
 class TrainerProfileDetailView(APIView):
 
     authentication_classes=[authentication.TokenAuthentication]
-    permission_classes=[permissions.IsAuthenticated,IsTrainer]
+    permission_classes=[permissions.IsAdminUser]
 
     def get(self,request):
 

@@ -104,3 +104,41 @@ Authorization: Token ac9e2debb69f5962dd60104e8b00808cde6564f7
 DELETE http://127.0.0.1:8000/programs/courses/3/
 Accept: application/json
 Authorization: Token ac9e2debb69f5962dd60104e8b00808cde6564f7
+
+#===============MODULE ENDPOINTS====================
+
+#API call for creating a module
+###
+POST http://127.0.0.1:8000/section/course/1/module/
+Content-Type: application/json
+Authorization: Token ac9e2debb69f5962dd60104e8b00808cde6564f7
+
+{
+    "title": "Getting Started with Python",
+    "description": "Install Python, set up an editor, and run your first Python program."
+  }
+
+#API call for retrieving a module
+###
+GET http://127.0.0.1:8000/section/module/1/
+Accept: application/json
+Authorization: Token ac9e2debb69f5962dd60104e8b00808cde6564f7
+
+#API call for updating a module
+###
+PUT  http://127.0.0.1:8000/section/module/1/
+Content-Type: application/json
+Authorization: Token ac9e2debb69f5962dd60104e8b00808cde6564f7
+
+{
+    "title": "Getting Started with Python",
+    "description": "Install Python, set up an editor, and run your first Python program"
+  }
+
+#API call for deleting a module
+###
+DELETE   http://127.0.0.1:8000/section/module/10/
+Accept: application/json
+Authorization: Token ac9e2debb69f5962dd60104e8b00808cde6564f7
+
+

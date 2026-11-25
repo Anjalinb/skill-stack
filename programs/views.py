@@ -10,12 +10,12 @@ from programs.models import Course
 from programs.serializers import CourseSerializer
 from programs.permissions import IsOwner
 
-from accounts.permissions import IsTrainer
+
 
 class CourseListCreateView(APIView):
 
     authentication_classes=[authentication.TokenAuthentication]
-    permission_classes=[IsTrainer]
+    permission_classes=[permissions.IsAdminUser]
 
     def get(self,request):
 
