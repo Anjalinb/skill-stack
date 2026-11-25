@@ -113,10 +113,10 @@ POST http://127.0.0.1:8000/section/course/1/module/
 Content-Type: application/json
 Authorization: Token ac9e2debb69f5962dd60104e8b00808cde6564f7
 
-{
-    "title": "Getting Started with Python",
-    "description": "Install Python, set up an editor, and run your first Python program."
-  }
+  {
+        "title": "Operators and Expressions",
+        "description": "Use arithmetic, comparison, and logical operators to build expressions."
+    }
 
 #API call for retrieving a module
 ###

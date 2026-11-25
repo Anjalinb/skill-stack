@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 
 from rest_framework.views import APIView
 from rest_framework.generics import RetrieveAPIView,UpdateAPIView,DestroyAPIView
@@ -19,7 +19,7 @@ class ModuleCreateView(APIView):
 
     def post(self,request,pk):
 
-        course_obj=Course.objects.get(id=pk)
+        course_obj=get_object_or_404(Course,id=pk)
 
         form_data=request.data
 
@@ -43,3 +43,5 @@ class ModuleRetrieveUpdateDeleteView(RetrieveAPIView,UpdateAPIView,DestroyAPIVie
 
     serializer_class=ModuleSerializer
     queryset=Module.objects.all()
+
+    
